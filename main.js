@@ -8,62 +8,35 @@ function processKeyDown(e) {
   console.log(e.code);
 
   if (e.code === 'KeyA') {
-    // Play A-Clap
-    let audio = document.getElementById('clap');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('A').classList.add('playing');
+    playSound("clap", "A")
   } else if (e.code === 'KeyS') {
-    // Play S-hihat
-    let audio = document.getElementById('hihat');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('S').classList.add('playing');
+    playSound("hihat", "S")
   } else if (e.code === 'KeyD') {
     // Play D-kick
-    let audio = document.getElementById('kick');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('D').classList.add('playing');
+    playSound("kick", "D")
   } else if (e.code === 'KeyF') {
-    // Play F-Openhat
-    let audio = document.getElementById('openhat');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('F').classList.add('playing');
+    playSound("openhat", "F")
   } else if (e.code === 'KeyG') {
-    // Play G-Boom
-    let audio = document.getElementById('boom');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('G').classList.add('playing');
+    playSound("boom", "G")
   } else if (e.code === 'KeyH') {
-    // Play H-Ride
-    let audio = document.getElementById('ride');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('H').classList.add('playing');
+    playSound("ride", "H")
   } else if (e.code === 'KeyJ') {
-    // Play J-Snare
-    let audio = document.getElementById('snare');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('J').classList.add('playing');
+    playSound("snare", "J")
   } else if (e.code === 'KeyK') {
-    // Play K-Tom
-    let audio = document.getElementById('tom');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('K').classList.add('playing');
+    playSound("tom", "K")
   } else if (e.code === 'KeyL') {
-    // Play L-Tink
-    let audio = document.getElementById('tink');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('L').classList.add('playing');
+    playSound("tink", "L")
   }
 }
 
+function playSound(soundName, keyLetter) {
+  let audio = document.getElementById(soundName);
+  audio.currentTime = 0;
+  audio.play();
+  document.getElementById(keyLetter).classList.add('playing');
+}
+
+// Dont do anything below this
 // Add transition end listeners
 document.getElementById('A').addEventListener('transitionend', removePlaying);
 document.getElementById('S').addEventListener('transitionend', removePlaying);
